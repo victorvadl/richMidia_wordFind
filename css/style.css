@@ -1,0 +1,216 @@
+/**
+* Wordfind.js 0.0.1
+* (c) 2012 Bill, BunKat LLC.
+* Wordfind is freely distributable under the MIT license.
+* For all details and documentation:
+*     http://github.com/bunkat/wordfind
+*/
+
+/**
+ * All this wordfind game was modified by Victor Codes and improved,
+ * removing several bugs and tweaked to be usable within an interactive media ads
+ * For more information contact me:
+ *    https://victorcodes.tech/
+ *    https://github.com/victorvadl
+ *
+ */
+
+body,
+html {
+	width: 320px;
+	height: 480px;
+	margin: 0;
+	padding: 0;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	color: inherit; /* 1 */
+	font: inherit; /* 2 */
+	margin: 0; /* 3 */
+}
+
+.wrapper {
+	width: 320px;
+	height: 480px;
+	border: none;
+}
+
+p {
+	font: 22pt sans-serif;
+	margin: 20px 20px 0px 20px;
+}
+
+/**
+* Styles for the puzzle
+*/
+#puzzle {
+	font-size: 10px;
+	/* border: 1px solid black; */
+	position: absolute;
+	top: 155px;
+	left: 22px;
+	z-index: 1;
+	/* width: 280px;
+	height: 160px; */
+}
+
+/* #puzzle-container {
+	overflow: hidden;
+} */
+
+#puzzleRow {
+	padding-top: 0;
+	font-weight: bold;
+	margin: 0;
+	height: 19px;
+}
+
+#puzzle div {
+	width: 100%;
+	margin: 0 auto;
+}
+
+/* style for each square in the puzzle */
+#puzzle .puzzleSquare {
+	height: 19px;
+	width: 15px;
+	margin: 0;
+	padding: 0;
+	text-transform: uppercase;
+	background-color: transparent;
+	border: 0;
+}
+
+button::-moz-focus-inner {
+	border: 0;
+}
+
+/* indicates when a square has been selected */
+#puzzle .selected {
+	background-color: yellow;
+}
+
+/* indicates that the square is part of a word that has been found */
+#puzzle .found {
+	background-color: green;
+	color: white;
+}
+
+#puzzle .solved {
+	background-color: purple;
+	color: white;
+}
+
+/* indicates that all words have been found */
+.complete {
+	background-color: transparent;
+	color: rgb(190, 190, 190);
+}
+
+/**
+* Styles for the word list
+*/
+
+.Esportes {
+	margin-left: -12px;
+}
+
+.Artes {
+	margin-left: -2px;
+}
+
+.Estrutura {
+	margin-top: -2px;
+	margin-left: 6px;
+}
+
+.Acolhimento {
+	margin-top: -2px;
+	margin-left: 15px;
+}
+
+.Inglês {
+	margin-left: 2px;
+}
+
+.remove {
+	display: none;
+}
+
+.buttonFinal {
+	width: 126px;
+	height: 37px;
+	position: absolute;
+	border: none;
+	border-radius: 20px;
+	left: 133px;
+	top: 341px;
+	cursor: pointer;
+	background: none;
+	opacity: 50%;
+	font-size: 0;
+	z-index: 9;
+}
+
+#words {
+	position: absolute;
+	font-size: 10px;
+	top: 299px;
+	left: 100px;
+	padding-top: 22px;
+	width: 120px;
+	column-count: 3;
+	column-gap: 20px;
+	-webkit-column-count: 3;
+	color: transparent;
+}
+
+#words ul {
+	list-style-type: none;
+}
+
+#words li {
+	padding: 0 0;
+}
+
+/* indicates that the word has been found */
+#words .wordFound {
+	text-decoration: line-through;
+	text-decoration-color: red;
+	color: transparent;
+}
+
+.main-content ul,
+.main-content ol {
+	margin-top: 0;
+}
+
+@keyframes blink-animation {
+	0% {
+		color: black;
+	}
+	50% {
+		color: #ffdc2a;
+	}
+	100% {
+		color: black;
+	}
+}
+
+.blink {
+	animation: blink-animation 0.3s 2;
+}
+
+/**
+* Styles for the button
+*/
+#solve {
+	margin: 0 30px;
+}
