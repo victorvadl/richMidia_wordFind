@@ -6,4 +6,10 @@ It works with two backgrounds where the first shows the words to be crossed out 
 
 The words are in the background image but you also have the option to use them directly in the code, where in the CSS they are found as transparent, you just need to assign a color and they will appear. The same goes for the button, which is in the background but is also as transparent in the CSS.
 
+# Gif RichMidia
+
+![Descrição da imagem](./img/gif_caça_palavras.gif)
+
+#
+
 Have fun and do not hesitate to contact me.
